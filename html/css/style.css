@@ -43,7 +43,10 @@ footer{
   background-color: black;
   color: white;
   text-align: center;
-  padding: 5%;
+  padding-top: 10px;
+  padding-bottom: 10px;
   font-size: 30px;
 
 }
+.faq-title
+{text-align:center !important;}
