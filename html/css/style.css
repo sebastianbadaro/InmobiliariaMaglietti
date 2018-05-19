@@ -1,0 +1,49 @@
+@import url('http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat');
+
+*{
+  box-sizing: border-box;
+
+}
+
+
+body {
+
+
+}
+
+.main-text{
+  text-align: center;
+
+}
+
+.profile-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom:50px;
+    background-image: url("../images/halftone-yellow.png");
+
+}
+
+.popular-items{
+    background-image: url("../images/doodles.png");
+    padding: 5%;
+    text-align: center;
+}
+
+.title{
+  padding-bottom: 30px;
+}
+
+footer{
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 5%;
+  font-size: 30px;
+
+}
