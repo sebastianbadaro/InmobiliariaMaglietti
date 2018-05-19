@@ -15,31 +15,7 @@
   </head>
   <body>
 
-    <nav class="navbar navbar-expand-md navbar-light bg-light my-navbar">
-        <a class="navbar-brand titulo" href="#">COOL E-Commerce</a>
-        <button class="navbar-toggler my-toggle-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="my-menu">MENU</span>
-          <span class="ion-navicon-round my-menu"></span>
-        </button>
-
-        <div class="collapse navbar-collapse " id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">ABOUT<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">FAQ <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">LOGIN <span class="sr-only">(current)</span></a>
-            </li>
-          </ul>
-
-        </div>
-      </nav>
+<?php include("nav.html") ?>
 
 <section class="profile-section">
 
@@ -97,16 +73,7 @@
 
 </section>
 
-<footer>
-
-
-<span class="ion-social-linkedin-outline"></span>
-<span class="ion-social-facebook-outline"></span>
-<span class="ion-social-instagram-outline"></span>
-<span class="ion-social-youtube-outline"></span>
-<span class="ion-social-twitter-outline"></span>
-
-</footer>
+<?php include("footer.html") ?>
 
   </body>
 

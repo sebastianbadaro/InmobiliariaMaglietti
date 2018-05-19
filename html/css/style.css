@@ -49,4 +49,41 @@ footer{
 
 }
 .faq-title
-{text-align:center !important;}
+{
+  text-align:center !important;
+}
+
+.container-login{
+
+  background-image: url("../images/doodles.png");
+ height: 100vh;
+}
+
+.login-div{
+  background-color: gray;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+
+
+.about-section{
+    background-image: url("../images/doodles.png");
+    height: 100vh;
+}
+.faq-section{
+padding: 5%;
+
+}
+
+.card-pic
+{
+  width: 100%;
+  border-radius: 50%;
+  padding: 10%;
+
+}
+
+.card{
+  background-color: rgb(185, 176, 176,0.7);
+}
