@@ -30,7 +30,7 @@
             <div class="wrapper">
             <span class="group-btn align-items-center">
                 <a href="#" class="btn btn-primary btn-md">Login <i class="fa fa-sign-in"></i></a>
-                  <a href="#"> or Register</a>
+                  <a href="registro.php"> or Register</a>
             </span>
             </div>
             </div>

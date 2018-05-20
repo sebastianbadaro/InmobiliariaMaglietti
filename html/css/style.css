@@ -9,7 +9,7 @@
 
 
 body {
-
+  background-image: url("../images/doodles.png");
 
 }
 
@@ -25,7 +25,7 @@ body {
   align-items: center;
   padding-top: 50px;
   padding-bottom:50px;
-    background-image: url("../images/halftone-yellow.png");
+    background-image: url("../images/wood_pattern.png");
 
 }
 
@@ -68,12 +68,12 @@ footer{
 
 
 .about-section{
-    background-image: url("../images/doodles.png");
-    height: 100vh;
+
+    padding: 5%;
 }
 .faq-section{
 padding: 5%;
-
+background-image: url("../images/doodles.png");
 }
 
 .card-pic
@@ -86,4 +86,42 @@ padding: 5%;
 
 .card{
   background-color: rgb(185, 176, 176,0.7);
+}
+
+.icon-ecommerce{
+  width: 70px;
+  margin-right: 20px;
+}
+
+.nav-icon{
+  color: black;
+}
+
+
+.mision-section, .vision-section, .values-section{
+  height: 33vh;
+  padding: 5%;
+}
+
+.mision-section{
+background-image: url("../images/subtle_white_mini_waves.png");
+padding: 5%;
+border: 1px solid black;
+margin: 10%;
+border-radius: 10px;
+}
+ .vision-section{
+background-image: url("../images/strange_bullseyes.png");
+padding: 5%;
+border: 1px solid black;
+margin: 10%;
+border-radius: 10px;
+}
+.values-section{
+background-image: url("../images/knitting250px.png");
+padding: 5%;
+border: 1px solid black;
+margin: 10%;
+border-radius: 10px;
+
 }
