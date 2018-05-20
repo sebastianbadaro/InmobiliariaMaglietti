@@ -22,13 +22,15 @@
         <div class="row    login-div">
             <div class="form-login">
             <h4>Welcome back.</h4>
-            <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="username" />
+            <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="Username" />
             </br>
-            <input type="text" id="userPassword" class="form-control input-sm chat-input" placeholder="password" />
+            <input type="text" id="userPassword" class="form-control input-sm chat-input" placeholder="Password" />
             </br>
+           <input type="checkbox" name="remember" value="remember"> Remember me<br>
             <div class="wrapper">
-            <span class="group-btn">
-                <a href="#" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></a>
+            <span class="group-btn align-items-center">
+                <a href="#" class="btn btn-primary btn-md">Login <i class="fa fa-sign-in"></i></a>
+                  <a href="#"> or Register</a>
             </span>
             </div>
             </div>
