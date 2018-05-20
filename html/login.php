@@ -19,18 +19,24 @@
 
 <div class="container-login  d-flex align-items-center justify-content-around">
 
-        <div class="row    login-div">
+        <div class="row login-div">
             <div class="form-login">
             <h4>Welcome back.</h4>
+              <hr class="colorgraph">
             <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="Username" />
             </br>
             <input type="text" id="userPassword" class="form-control input-sm chat-input" placeholder="Password" />
             </br>
            <input type="checkbox" name="remember" value="remember"> Remember me<br>
+           <a href="#">Forgot your password?</a>
+             <hr class="colorgraph">
             <div class="wrapper">
             <span class="group-btn align-items-center">
-                <a href="#" class="btn btn-primary btn-md">Login <i class="fa fa-sign-in"></i></a>
-                  <a href="registro.php"> or Register</a>
+              <div class="row">
+                <div class="col-xs-12 col-md-6"><input type="submit" value="Sign in" class="btn btn-success btn-block btn-lg" tabindex="7"></div>
+                <div class="col-xs-12 col-md-6"><a href="registro.php" class="btn btn-primary btn-block btn-lg">Register</a></div>
+              </div>
+
             </span>
             </div>
             </div>

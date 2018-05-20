@@ -60,8 +60,8 @@ footer{
 }
 
 .login-div{
-  background-color: gray;
-  padding: 30px;
+  background-color: rgb(185, 176, 176,0.7);
+  padding: 40px;
   border-radius: 10px;
 }
 
@@ -107,21 +107,37 @@ background-image: url("../images/doodles.png");
 background-image: url("../images/subtle_white_mini_waves.png");
 padding: 5%;
 border: 1px solid black;
-margin: 10%;
+margin: 5%;
 border-radius: 10px;
 }
  .vision-section{
 background-image: url("../images/strange_bullseyes.png");
 padding: 5%;
 border: 1px solid black;
-margin: 10%;
+margin: 5%;
 border-radius: 10px;
 }
 .values-section{
 background-image: url("../images/knitting250px.png");
 padding: 5%;
 border: 1px solid black;
-margin: 10%;
+margin: 5%;
 border-radius: 10px;
 
+}
+
+.register-container{
+  height: 100vh;
+}
+
+
+.grey-area{
+  background-color: rgb(185, 176, 176,0.7);
+  border-radius: 10px;
+  padding: 5%;
+
+}
+
+.card-title{
+  font-weight: bold;
 }
