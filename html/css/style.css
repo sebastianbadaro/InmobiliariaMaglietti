@@ -39,6 +39,8 @@ body {
   padding-bottom: 30px;
 }
 
+
+
 footer{
   background-color: black;
   color: white;
@@ -132,7 +134,7 @@ border-radius: 10px;
 
 
 .grey-area{
-  background-color: rgb(185, 176, 176,0.7);
+  background-color: rgba(185, 176, 176,0.7);
   border-radius: 10px;
   padding: 5%;
 
@@ -140,4 +142,12 @@ border-radius: 10px;
 
 .card-title{
   font-weight: bold;
+}
+
+article img{
+  width: 100%;
+}
+
+.mytest{
+  width: 100% !important;
 }

@@ -30,42 +30,42 @@
 
 <h3 class="title">Most popular items</h3>
 
-<div class="row align-items-center d-flex justify-content-around">
+<div class="row align-items-center  justify-content-around">
 
-        <article class="col-12 col-md-6 col-lg-4 col-xl-3 row">
-          <img src="images/submarine.png" alt="submarine">
+        <article class="col-12 col-md-6 col-lg-4 col-xl-3">
+          <img src="images/submarine.png" alt="submarine" class="mytest">
         </article>
-        <article class="col-12 col-md-6 col-lg-4 col-xl-3 row">
+        <article class="col-12 col-md-6 col-lg-4 col-xl-3">
             <img src="images/cabin.png" alt="submarine">
         </article>
-        <article class="col-12 col-md-6 col-lg-4 col-xl-3 row">
+        <article class="col-12 col-md-6 col-lg-4 col-xl-3">
         <img src="images/cake.png" alt="submarine">
         </article>
-        <article class="col-12 col-md-6 col-lg-4 col-xl-3 row">
+        <article class="col-12 col-md-6 col-lg-4 col-xl-3">
         <img src="images/circus.png" alt="submarine">
         </article>
-        <article class="col-12 col-md-6 col-lg-4 col-xl-3 row">
+        <article class="col-12 col-md-6 col-lg-4 col-xl-3">
         <img src="images/game.png" alt="submarine">
         </article>
-        <article class="col-12 col-md-6 col-lg-4 col-xl-3 row">
+        <article class="col-12 col-md-6 col-lg-4 col-xl-3 ">
           <img src="images/submarine.png" alt="submarine">
         </article>
-        <article class="col-12 col-md-6 col-lg-4 col-xl-3 row">
+        <article class="col-12 col-md-6 col-lg-4 col-xl-3">
             <img src="images/cabin.png" alt="submarine">
         </article>
-        <article class="col-12 col-md-6 col-lg-4 col-xl-3 row">
+        <article class="col-12 col-md-6 col-lg-4 col-xl-3">
         <img src="images/cake.png" alt="submarine">
         </article>
-        <article class="col-12 col-md-6 col-lg-4 col-xl-3 row">
+        <article class="col-12 col-md-6 col-lg-4 col-xl-3">
         <img src="images/circus.png" alt="submarine">
         </article>
-        <article class="col-12 col-md-6 col-lg-4 col-xl-3 row">
+        <article class="col-12 col-md-6 col-lg-4 col-xl-3">
         <img src="images/game.png" alt="submarine">
         </article>
-        <article class="col-12 col-md-6 col-lg-4 col-xl-3 row">
+        <article class="col-12 col-md-6 col-lg-4 col-xl-3">
           <img src="images/submarine.png" alt="submarine">
         </article>
-        <article class="col-12 col-md-6 col-lg-4 col-xl-3 row">
+        <article class="col-12 col-md-6 col-lg-4 col-xl-3">
             <img src="images/cabin.png" alt="submarine">
         </article>
 </div>
