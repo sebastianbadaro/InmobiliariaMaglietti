@@ -172,3 +172,16 @@ article img{
   font-size: 50px;
   color: black;
 }
+
+.bigger-on-hover:hover{
+  color: white!important;
+  font-size: 50px!important;
+}
+
+.bigger-on-hover{
+  padding: 5px;
+  transition: 0.5s;
+}
+.social-items-container{
+  height: 50px;
+}
