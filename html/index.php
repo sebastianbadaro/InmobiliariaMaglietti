@@ -22,7 +22,7 @@
     <img src="images/e-commerce.png"  class="profile-image" >
     <h1>COOL E-Commerce</h1>
     <ion-icon name="twitter"></ion-icon>
-    <p>The place where you will find that thing you were looking for...</p>
+    <p class="nice-family">The place to find it...</p>
 </section>
 
 <section class="popular-items">

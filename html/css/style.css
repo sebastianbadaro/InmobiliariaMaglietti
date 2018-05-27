@@ -1,6 +1,6 @@
 @import url('http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
-@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Parisienne');
 
 *{
   box-sizing: border-box;
@@ -10,12 +10,17 @@
 
 body {
   background-image: url("../images/doodles.png");
-
+  font-family: Monserrat;
 }
 
 .main-text{
   text-align: center;
 
+}
+
+.nice-family{
+  font-family: Parisienne;
+  font-size: 2em;
 }
 
 .profile-section{
