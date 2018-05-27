@@ -18,10 +18,10 @@
 <?php include("nav.html") ?>
 
 
-<div class="container register-container  d-flex align-items-center ">
+<div class="">
 
-<div class="row d-flex align-items-center justify-content-around">
-  <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3 grey-area">
+<div class="d-flex justify-content-around align-items-center register-container">
+  <div class="col-11 col-sm-8 col-md-6  grey-area align-items-center ">
   <form role="form">
     <h2>Please Sign Up <small>It's free and always will be.</small></h2>
     <hr class="colorgraph">
@@ -100,7 +100,7 @@
 </div><!-- /.modal -->
 </div>
 
-<?php include("footer.html") ?>
+<?php include("footer.php") ?>
 
   </body>
 

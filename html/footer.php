@@ -4,4 +4,9 @@
   <a class="ion-social-instagram-outline" href="https://www.instagram.com" target="_blank"></a>
   <a class="ion-social-youtube-outline" href="https://www.youtube.com" target="_blank"></a>
   <a class="ion-social-twitter-outline" href="https://www.twitter.com" target="_blank"></a>
+
+<br><p class="copyright">Copyright © <?php  echo date("Y")?> </p>
+
+
+
 </footer>
