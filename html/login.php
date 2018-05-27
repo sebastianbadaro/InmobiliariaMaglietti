@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Login</title>
+    <title>LOGIN</title>
   </head>
   <body>
 

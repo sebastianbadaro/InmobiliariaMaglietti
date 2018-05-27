@@ -104,6 +104,9 @@ background-image: url("../images/doodles.png");
 .nav-icon{
   color: black;
 }
+.navbar {
+  color: white;
+}
 
 
 .mision-section, .vision-section, .values-section{

@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Register</title>
+    <title>REGISTER</title>
   </head>
   <body>
 

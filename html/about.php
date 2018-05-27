@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="css/style.css">
 
-    <title></title>
+    <title>ABOUT</title>
   </head>
   <body>
 <?php include("nav.html") ?>
