@@ -67,7 +67,7 @@ footer{
 }
 
 .login-div{
-  background-color: rgb(185, 176, 176,0.7);
+  background-color: rgba(185, 176, 176,0.7);
   padding: 40px;
   border-radius: 10px;
 }
@@ -91,9 +91,11 @@ background-image: url("../images/doodles.png");
 
 }
 
-.card{
-  background-color: rgb(185, 176, 176,0.7);
+.about-card{
+  background-color: rgba(185, 176, 176,0.7);
   margin: 10px;
+  border-radius: 10px;
+  border: solid 1px black;
 }
 
 .icon-ecommerce{

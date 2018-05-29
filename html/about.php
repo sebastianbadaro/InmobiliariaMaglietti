@@ -21,7 +21,7 @@
     <h1 class="faq-title"></h1>
 
 <div class="card-container row justify-content-center">
-  <div class="card col-11 col-md-3" style="width: 18rem;">
+  <div class="about-card col-11 col-md-3" style="width: 18rem;">
     <img class="card-img-top card-pic" src="images/seba.jpeg" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">Badaro Sebastian</h5>
@@ -33,7 +33,7 @@
 
 <p href="#" class="ion-android-star align-self-center black-separator"></p>
 
-  <div class="card col-11  col-md-3" style="width: 18rem;">
+  <div class="about-card col-11  col-md-3" style="width: 18rem;">
     <img class="card-img-top card-pic" src="images/marina.jpg" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">Radice Marina</h5>
