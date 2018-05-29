@@ -142,7 +142,7 @@ border-radius: 10px;
 }
 
 .register-container{
-  height: 100vh;
+  min-height: 100vh;
 }
 
 
@@ -150,6 +150,7 @@ border-radius: 10px;
   background-color: rgba(185, 176, 176,0.7);
   border-radius: 10px;
   padding: 5%;
+  margin: 5%;
 
 }
 
