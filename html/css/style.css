@@ -1,0 +1,190 @@
+@import url('http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Parisienne');
+
+*{
+  box-sizing: border-box;
+
+}
+
+
+body {
+  background-image: url("../images/doodles.png");
+  font-family: Monserrat;
+}
+
+.main-text{
+  text-align: center;
+
+}
+
+.nice-family{
+  font-family: Parisienne;
+  font-size: 2em;
+}
+
+.profile-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom:50px;
+    background-image: url("../images/wood_pattern.png");
+
+}
+
+.popular-items{
+    background-image: url("../images/doodles.png");
+    padding: 5%;
+    text-align: center;
+}
+
+.title{
+  padding-bottom: 30px;
+}
+
+
+
+footer{
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 30px;
+
+}
+.faq-title
+{
+  text-align:center !important;
+}
+
+.container-login{
+
+  background-image: url("../images/doodles.png");
+ height: 100vh;
+}
+
+.login-div{
+  background-color: rgba(185, 176, 176,0.7);
+  padding: 40px;
+  border-radius: 10px;
+}
+
+
+
+.about-section{
+
+    padding: 5%;
+}
+.faq-section{
+padding: 5%;
+background-image: url("../images/doodles.png");
+}
+
+.card-pic
+{
+  width: 100%;
+  border-radius: 50%;
+  padding: 10%;
+
+}
+
+.about-card{
+  background-color: rgba(185, 176, 176,0.7);
+  margin: 10px;
+  border-radius: 10px;
+  border: solid 1px black;
+}
+
+.icon-ecommerce{
+  width: 70px;
+  margin-right: 20px;
+}
+
+.nav-icon{
+  color: black;
+}
+.navbar {
+  color: white;
+}
+
+
+.mision-section, .vision-section, .values-section{
+
+  padding: 5%;
+
+
+}
+
+.mision-section{
+background-image: url("../images/subtle_white_mini_waves.png");
+padding: 5%;
+border: 1px solid black;
+margin: 5%;
+border-radius: 10px;
+}
+ .vision-section{
+background-image: url("../images/strange_bullseyes.png");
+padding: 5%;
+border: 1px solid black;
+margin: 5%;
+border-radius: 10px;
+}
+.values-section{
+background-image: url("../images/knitting250px.png");
+padding: 5%;
+border: 1px solid black;
+margin: 5%;
+border-radius: 10px;
+
+}
+
+.register-container{
+  min-height: 100vh;
+}
+
+
+.grey-area{
+  background-color: rgba(185, 176, 176,0.7);
+  border-radius: 10px;
+  padding: 5%;
+  margin: 5%;
+
+}
+
+.card-title{
+  font-weight: bold;
+}
+
+article img{
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.mytest{
+  width: 100% !important;
+}
+
+.copyright{
+  font-size: 10px;
+}
+
+.black-separator{
+  font-size: 50px;
+  color: black;
+}
+
+.bigger-on-hover:hover{
+  color: white!important;
+  font-size: 50px!important;
+}
+
+.bigger-on-hover{
+  padding: 5px;
+  transition: 0.5s;
+}
+.social-items-container{
+  height: 50px;
+}
