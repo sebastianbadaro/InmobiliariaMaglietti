@@ -1,4 +1,47 @@
 <!DOCTYPE html>
+
+<?php
+$firstName="";
+$lastName="";
+$email="";
+$displayName="";
+$password="";
+$confirmPassword="";
+$errors=[];
+if($_POST){
+
+   $firstName=$_POST['first_name'];
+   $lastName=$_POST['last_name'];
+   $email=$_POST['email'];
+   $displayName=$_POST['display_name'];
+   $password=$_POST['password'];
+   $confirmPassword=$_POST['password_confirmation'];
+
+   if($firstName == ""){
+     $errors[]="First name can't be empty.";
+   }
+   if($lastName == ""){
+     $errors[]="Last name can't be empty.";
+   }if($displayName == ""){
+     $errors[]="Dislpay name can't be empty.";
+   }
+   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+   $errors[]= "Invalid email format.";
+   }
+ if($password == "" || $confirmPassword ==""){
+   $errors[]="Complete both passwords.";
+ }elseif ($password !=$confirmPassword) {
+   $errors[]="Both passwords must match.";
+ }elseif (strlen($password)<8) {
+    $errors[]="Password must have at least 8 characters.";
+ }else {
+  
+ }
+
+}
+
+ ?>
+
 <html>
   <head>
     <meta charset="utf-8">
@@ -22,46 +65,74 @@
 
 <div class="d-flex justify-content-around align-items-center register-container">
   <div class="col-11 col-sm-8 col-md-6  grey-area align-items-center ">
-  <form role="form">
+  <form role="form" method="post">
     <h2>Please Sign Up <small>It's free and always will be.</small></h2>
     <hr class="colorgraph">
+
+    <?php if($errors) : ?>
+    <div class="alert alert-danger" role="alert">
+    <ul>
+      <?php foreach($errors as $error): ?>
+
+         <li><?=$error ?></li>
+
+     <?php endforeach; ?>
+      </ul>
+    </div>
+    <?php endif; ?>
+
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-6 ">
+
+
+
         <div class="form-group">
-                      <input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1">
+                      <input type="text" value="<?=$firstName?>" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1">
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-6">
         <div class="form-group">
-          <input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
+          <input type="text" name="last_name" value="<?=$lastName?>" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
         </div>
       </div>
     </div>
     <div class="form-group">
-      <input type="text" name="display_name" id="display_name" class="form-control input-lg" placeholder="Display Name" tabindex="3">
+      <input type="text" name="display_name" value="<?=$displayName?>" id="display_name" class="form-control input-lg" placeholder="Display Name" tabindex="3">
     </div>
     <div class="form-group">
-      <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4">
+      <input type="email" name="email" id="email" value="<?=$email?>"class="form-control input-lg" placeholder="Email Address" tabindex="4">
     </div>
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-6">
+    <div class="form-group">
+      <label for="file">Select a profile Picture</label>
+
+    </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-6">
+  <div class="form-group">
+
+    <input type="file" name="file" id="file" class="form-control-file input-lg" placeholder="Profile Picture" tabindex="5">
+  </div>
+  </div>
+
+    </div>
+
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-6">
         <div class="form-group">
-          <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="5">
+          <input type="password" name="password" value="<?=$password?>"id="password" class="form-control input-lg" placeholder="Password" tabindex="6">
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-6">
         <div class="form-group">
-          <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
+          <input type="password" name="password_confirmation" value="<?=$confirmPassword?>" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-4 col-sm-3 col-md-3">
-        <span class="button-checkbox">
-          <button type="button" class="btn" data-color="info" tabindex="7">I Agree</button>
-                      <input type="checkbox" name="t_and_c" id="t_and_c" class="hidden" value="1">
-        </span>
-      </div>
+
       <div class="col-xs-8 col-sm-9 col-md-9">
          By clicking <strong class="label label-primary">Register</strong>, you agree to the <a href="#" data-toggle="modal" data-target="#t_and_c_m">Terms and Conditions</a> set out by this site, including our Cookie Use.
       </div>
@@ -99,6 +170,9 @@
 </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 </div>
+
+
+</form>
 
 <?php include("footer.php") ?>
 
