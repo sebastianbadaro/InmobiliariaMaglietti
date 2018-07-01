@@ -17,10 +17,18 @@ function validar_form($data){
     $errors[]="Last name can't be empty.";
   }if($displayName == ""){
     $errors[]="Dislpay name can't be empty.";
+  }elseif(existeUsuario($displayName)){
+      $errors[]= "User name in use.";
   }
+
+
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
   $errors[]= "Invalid email format.";
-  }
+}else if(existeEmail($email)){
+  $errors[]= "Email in use.";
+}
+
+
   if($password == "" || $confirmPassword ==""){
   $errors[]="Complete both passwords.";
   }elseif ($password !=$confirmPassword) {
@@ -30,7 +38,9 @@ function validar_form($data){
   }else {
 
   }
+
  return $errors;
+
 }
 
 
@@ -80,5 +90,25 @@ function guardarUsuario ($datos){
        }
        return $todosDatos;
      }
+
+  function existeEmail($email){
+  $todos = traerRegistros();
+  foreach ($todos as $user) {
+    if ($user['email'] == $email) {
+      return $user;
+    }
+  }
+  return false;
+  }
+
+function existeUsuario($displayName){
+$todos = traerRegistros();
+foreach ($todos as $user) {
+  if ($user['displayName'] == $displayName) {
+    return $user;
+  }
+}
+return false;
+}
 
  ?>

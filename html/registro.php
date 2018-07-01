@@ -20,10 +20,11 @@ if($_POST){
    $confirmPassword=trim($_POST['password_confirmation']);
    $errors = validar_form($_POST);
 
-   if (empty($errores)) {
+   if (empty($errors)) {
      $usuario = crearUsuario($_POST);
      guardarUsuario($usuario);
-
+     header('location: index.php');
+              exit;
    }
 
 
