@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 
 <?php
+require_once('functions.php') ;
+
 $firstName="";
 $lastName="";
 $email="";
@@ -10,33 +12,20 @@ $confirmPassword="";
 $errors=[];
 if($_POST){
 
-   $firstName=$_POST['first_name'];
-   $lastName=$_POST['last_name'];
-   $email=$_POST['email'];
-   $displayName=$_POST['display_name'];
-   $password=$_POST['password'];
-   $confirmPassword=$_POST['password_confirmation'];
+   $firstName=trim($_POST['first_name']);
+   $lastName=trim($_POST['last_name']);
+   $email=trim($_POST['email']);
+   $displayName=trim($_POST['display_name']);
+   $password=trim($_POST['password']);
+   $confirmPassword=trim($_POST['password_confirmation']);
+   $errors = validar_form($_POST);
 
-   if($firstName == ""){
-     $errors[]="First name can't be empty.";
+   if (empty($errores)) {
+     $usuario = crearUsuario($_POST);
+     guardarUsuario($usuario);
+
    }
-   if($lastName == ""){
-     $errors[]="Last name can't be empty.";
-   }if($displayName == ""){
-     $errors[]="Dislpay name can't be empty.";
-   }
-   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-   $errors[]= "Invalid email format.";
-   }
- if($password == "" || $confirmPassword ==""){
-   $errors[]="Complete both passwords.";
- }elseif ($password !=$confirmPassword) {
-   $errors[]="Both passwords must match.";
- }elseif (strlen($password)<8) {
-    $errors[]="Password must have at least 8 characters.";
- }else {
-  
- }
+
 
 }
 
@@ -65,7 +54,7 @@ if($_POST){
 
 <div class="d-flex justify-content-around align-items-center register-container">
   <div class="col-11 col-sm-8 col-md-6  grey-area align-items-center ">
-  <form role="form" method="post">
+  <form role="form" method="post" enctype="multipart/form-data">
     <h2>Please Sign Up <small>It's free and always will be.</small></h2>
     <hr class="colorgraph">
 
