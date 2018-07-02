@@ -1,4 +1,24 @@
 <!DOCTYPE html>
+
+<?php
+require_once('functions.php') ;
+
+$userName='';
+$password='';
+$errors=[];
+
+
+if($_POST){
+$userName=trim($_POST['userName']);
+$errors=validarLogin($_POST);
+
+if(empty($errors)){
+  header('location: index.php');
+  exit;
+}
+}
+
+ ?>
 <html>
   <head>
     <meta charset="utf-8">
@@ -18,14 +38,26 @@
 <?php include("nav.html") ?>
 
 <div class="container-login  d-flex align-items-center justify-content-around">
-
+  <form role="form" method="post" enctype="multipart/form-data">
         <div class="row login-div">
             <div class="form-login">
             <h4>Welcome back.</h4>
               <hr class="colorgraph">
-            <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="Username" />
+              <?php if($errors) : ?>
+              <div class="alert alert-danger" role="alert">
+              <ul>
+                <?php foreach($errors as $error): ?>
+
+                   <li><?=$error ?></li>
+
+               <?php endforeach; ?>
+                </ul>
+              </div>
+              <?php endif; ?>
+
+            <input type="text" id="userName" name="userName"class="form-control input-sm chat-input" placeholder="Username" value="<?=$userName?>"/>
             </br>
-            <input type="text" id="userPassword" class="form-control input-sm chat-input" placeholder="Password" />
+            <input type="password" id="userPassword" name="password" class="form-control input-sm chat-input" placeholder="Password" />
             </br>
            <input type="checkbox" name="remember" value="remember"> Remember me<br>
            <a href="#">Forgot your password?</a>
@@ -43,6 +75,7 @@
 
         </div>
 
+</form>
 </div>
 
 <?php include("footer.php") ?>

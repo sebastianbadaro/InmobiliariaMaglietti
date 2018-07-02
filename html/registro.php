@@ -10,6 +10,8 @@ $displayName="";
 $password="";
 $confirmPassword="";
 $errors=[];
+
+
 if($_POST){
 
    $firstName=trim($_POST['first_name']);
@@ -23,8 +25,8 @@ if($_POST){
    if (empty($errors)) {
      $usuario = crearUsuario($_POST);
      guardarUsuario($usuario);
-     header('location: index.php');
-              exit;
+     header('location: login.php');
+     exit;
    }
 
 
@@ -102,7 +104,7 @@ if($_POST){
     <div class="col-xs-12 col-sm-6 col-md-6">
   <div class="form-group">
 
-    <input type="file" name="file" id="file" class="form-control-file input-lg" placeholder="Profile Picture" tabindex="5">
+    <input type="file" name="file" id="file" class="form-control-file input-lg" placeholder="Profile Picture" tabindex="5" value="<?= isset($_FILES['foto']['tmp'])?$_FILES['foto']['tmp']:'';?>">
   </div>
   </div>
 

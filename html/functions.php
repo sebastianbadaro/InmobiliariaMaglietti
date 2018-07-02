@@ -1,5 +1,29 @@
 <?php
 
+
+function validarLogin($data){
+  $userName = trim($data['userName']);
+    $password = trim($data['password']);
+    $errors=[];
+
+        if($userName ==''){
+          $errors[]='Enter you username.';
+        }elseif(!$user = traerPorId($userName)){
+            $errors[]='El usuario ingresaro no existe.';
+        }else{
+
+          if($password ==''){
+            $errors[]='Enter you password.';
+          }elseif(!password_verify($password, $user['password'])) {
+              $errors[]='Incorrect password.';
+          }
+
+        }
+
+
+        return $errors;
+}
+
 function validar_form($data){
 
   $firstName=trim($data['first_name']);
@@ -35,9 +59,16 @@ function validar_form($data){
   $errors[]="Both passwords must match.";
   }elseif (strlen($password)<8) {
    $errors[]="Password must have at least 8 characters.";
-  }else {
-
   }
+
+  if($_FILES['foto']['name']){
+        $archivo = $_FILES['foto']['name'];
+        $ext = pathinfo($archivo, PATHINFO_EXTENSION);
+        $archivoFisico = $_FILES['foto']['tmp_name'];
+        if ($ext != 'jpg' && $ext != 'jpeg' && $ext != 'png'){
+        $errors[] = "Tu foto de perfil debe ser JPG, PNG o JPEG.";
+         }
+        }
 
  return $errors;
 
@@ -110,5 +141,14 @@ foreach ($todos as $user) {
 }
 return false;
 }
+function traerPorId($id){
+        $todos = traerRegistros();
+        foreach ($todos as $usuario) {
+          if ($id == $usuario['id']) {
+            return $usuario;
+          }
+        }
+        return false;
+      }
 
  ?>
