@@ -5,6 +5,7 @@ session_start();
 
 if (isset($_COOKIE['id'])){
    $_SESSION['id'] = $_COOKIE['id'];
+   $_SESSION['displayName'] = $_COOKIE['displayName'];
   }
 
 function validarLogin($data){
@@ -157,7 +158,7 @@ function traerPorId($displayName){
   }
   function loguear($usuario){
     $_SESSION['id'] = $usuario['id'];
-
+    $_SESSION['displayName'] = $usuario['displayName'];
   }
 
   function estaLogueado(){

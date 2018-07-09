@@ -21,6 +21,7 @@ if(empty($errors)){
   loguear(existeUsuario($userName));
   if (isset($_POST["recordar"])) {
 	   setcookie('id', $usuario['id'], time() + 3600 * 24 * 30);
+     setcookie('displayName', $usuario['displayName'], time() + 3600 * 24 * 30);
      }
   header('location: index.php');
   exit;
