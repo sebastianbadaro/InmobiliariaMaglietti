@@ -20,7 +20,11 @@
           <a class="nav-link" href="faq.php">FAQ <span class="sr-only"></span></a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="login.php">LOGIN <span class="sr-only"></span></a>
+          <?php if(!estaLogueado()) : ?>
+          <a class="nav-link" href="login.php">LOG IN <span class="sr-only"></span></a>
+        <?php else: ?>
+          <a class="nav-link" href="logout.php">LOG OUT <span class="sr-only"></span></a>
+        <?php endif; ?>
         </li>
       </ul>
 

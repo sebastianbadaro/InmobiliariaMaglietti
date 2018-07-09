@@ -1,3 +1,9 @@
+
+
+<?php
+require_once('functions.php');
+
+ ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -14,7 +20,7 @@
     <title>ABOUT</title>
   </head>
   <body>
-<?php include("nav.html") ?>
+<?php include("nav.php") ?>
 
 
 <section class="about-section">

@@ -1,3 +1,9 @@
+<?php
+
+require_once('functions.php') ;
+ ?>
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -15,7 +21,7 @@
   </head>
   <body>
 
-  <?php include("nav.html") ?>
+  <?php include("nav.php") ?>
 
 <section class="faq-section">
   <h1 class="faq-title">F.A.Q</h1>

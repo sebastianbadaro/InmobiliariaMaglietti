@@ -3,6 +3,11 @@
 <?php
 require_once('functions.php') ;
 
+if (estaLogueado()) {
+		header('location: index.php');
+		exit;	}
+
+
 $firstName="";
 $lastName="";
 $email="";
@@ -50,7 +55,7 @@ if($_POST){
   </head>
   <body>
 
-<?php include("nav.html") ?>
+<?php include("nav.php") ?>
 
 
 <div class="">

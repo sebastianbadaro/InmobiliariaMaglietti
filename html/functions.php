@@ -1,26 +1,29 @@
 <?php
+session_start();
+// --var_dump($_SESSION['id']);
 
+
+if (isset($_COOKIE['id'])){
+   $_SESSION['id'] = $_COOKIE['id'];
+  }
 
 function validarLogin($data){
   $userName = trim($data['userName']);
-    $password = trim($data['password']);
-    $errors=[];
+  $password = trim($data['password']);
+  $errors=[];
 
-        if($userName ==''){
-          $errors[]='Enter you username.';
-        }elseif(!$user = traerPorId($userName)){
-            $errors[]='El usuario ingresado no existe.';
-        }else{
+  if($userName ==''){
+    $errors[]='Enter you username.';
+  }elseif(!$user = traerPorId($userName)){
+    $errors[]='El usuario ingresado no existe.';
+  }else{
 
-          if($password ==''){
-            $errors[]='Enter you password.';
-          }elseif(!password_verify($password, $user['password'])) {
-              $errors[]='Incorrect password.';
-
-
-          }
-
-        }
+    if($password ==''){
+      $errors[]='Enter you password.';
+    }elseif(!password_verify($password, $user['password'])) {
+      $errors[]='Incorrect password.';
+    }
+  }
 
 
         return $errors;
@@ -49,10 +52,10 @@ function validar_form($data){
 
 
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-  $errors[]= "Invalid email format.";
-}else if(existeEmail($email)){
-  $errors[]= "Email in use.";
-}
+    $errors[]= "Invalid email format.";
+  }else if(existeEmail($email)){
+    $errors[]= "Email in use.";
+  }
 
 
   if($password == "" || $confirmPassword ==""){
@@ -87,8 +90,8 @@ $usuario = [
   'displayName'=>trim($data['display_name']),
   'password'=>password_hash(trim($data['password']),PASSWORD_DEFAULT)
 
-];
-return $usuario;
+          ];
+  return $usuario;
 }
 
 
@@ -101,27 +104,27 @@ function guardarUsuario ($datos){
   function traerUltimoID(){
       $usuarios = traerRegistros();
 
-        if (count($usuarios) == 0){
+      if (count($usuarios) == 0){
          return 0;
-        }
+      }
 
-        $elUltimo = array_pop($usuarios);
+      $elUltimo = array_pop($usuarios);
 
-        $id = $elUltimo['id'];
-        return $id + 1;
+      $id = $elUltimo['id'];
+      return $id + 1;
       }
 
       function traerRegistros() {
 
       $registrosJson = file_get_contents('usuarios.json', true);
       $usuariosDatos = explode(PHP_EOL, $registrosJson);
-       array_pop($usuariosDatos);
-       $todosDatos = [];
+      array_pop($usuariosDatos);
+      $todosDatos = [];
 
-       foreach ($usuariosDatos as $usuario){
-       $todosDatos[] = json_decode($usuario, true);
-       }
-       return $todosDatos;
+      foreach ($usuariosDatos as $usuario){
+        $todosDatos[] = json_decode($usuario, true);
+      }
+      return $todosDatos;
      }
 
   function existeEmail($email){
@@ -144,13 +147,20 @@ foreach ($todos as $user) {
 return false;
 }
 function traerPorId($displayName){
-        $todos = traerRegistros();
-        foreach ($todos as $usuario) {
-          if ($displayName == $usuario['displayName']) {
-            return $usuario;
-          }
-        }
-        return false;
-      }
+  $todos = traerRegistros();
+  foreach ($todos as $usuario) {
+    if ($displayName == $usuario['displayName']) {
+        return $usuario;
+    }
+  }
+  return false;
+  }
+  function loguear($usuario){
+    $_SESSION['id'] = $usuario['id'];
 
+  }
+
+  function estaLogueado(){
+    return isset($_SESSION['id']);
+  }
  ?>

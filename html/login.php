@@ -3,6 +3,11 @@
 <?php
 require_once('functions.php') ;
 
+if (estaLogueado()) {
+		header('location: index.php');
+		exit;	}
+
+
 $userName='';
 $password='';
 $errors=[];
@@ -13,6 +18,10 @@ $userName=trim($_POST['userName']);
 $errors=validarLogin($_POST);
 
 if(empty($errors)){
+  loguear(existeUsuario($userName));
+  if (isset($_POST["recordar"])) {
+	   setcookie('id', $usuario['id'], time() + 3600 * 24 * 30);
+     }
   header('location: index.php');
   exit;
 }
@@ -35,7 +44,7 @@ if(empty($errors)){
   </head>
   <body>
 
-<?php include("nav.html") ?>
+<?php include("nav.php") ?>
 
 <div class="container-login  d-flex align-items-center justify-content-around">
   <form role="form" method="post" enctype="multipart/form-data">
