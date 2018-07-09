@@ -9,13 +9,15 @@ function validarLogin($data){
         if($userName ==''){
           $errors[]='Enter you username.';
         }elseif(!$user = traerPorId($userName)){
-            $errors[]='El usuario ingresaro no existe.';
+            $errors[]='El usuario ingresado no existe.';
         }else{
 
           if($password ==''){
             $errors[]='Enter you password.';
           }elseif(!password_verify($password, $user['password'])) {
               $errors[]='Incorrect password.';
+
+
           }
 
         }
@@ -141,10 +143,10 @@ foreach ($todos as $user) {
 }
 return false;
 }
-function traerPorId($id){
+function traerPorId($displayName){
         $todos = traerRegistros();
         foreach ($todos as $usuario) {
-          if ($id == $usuario['id']) {
+          if ($displayName == $usuario['displayName']) {
             return $usuario;
           }
         }
