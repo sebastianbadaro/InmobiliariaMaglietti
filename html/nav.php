@@ -26,9 +26,16 @@ if(estaLogueado())
         <li class="nav-item active">
           <a class="nav-link" href="faq.php">FAQ <span class="sr-only"></span></a>
         </li>
-        <li class="nav-item active">
+
           <?php if(!estaLogueado()) : ?>
-          <a class="nav-link" href="login.php">LOG IN <span class="sr-only"></span></a>
+          <li class="nav-item active">
+           <a class="nav-link" href="login.php">LOG IN <span class="sr-only"></span></a>
+          </li>
+
+        <li class="nav-item active">
+         <a class="nav-link" href="registro.php">REGISTER <span class="sr-only"></span></a>
+        </li>
+
         <?php else: ?>
           <!-- <a class="nav-link" > OUT <span class="sr-only"></span></a> -->
         <li class="nav-item dropdown">
@@ -44,7 +51,7 @@ if(estaLogueado())
               </li>
 
         <?php endif; ?>
-        </li>
+
       </ul>
 
     </div>

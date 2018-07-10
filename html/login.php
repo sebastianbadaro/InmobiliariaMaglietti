@@ -7,7 +7,6 @@ if (estaLogueado()) {
 		header('location: index.php');
 		exit;	}
 
-
 $userName='';
 $password='';
 $errors=[];
@@ -18,13 +17,15 @@ $userName=trim($_POST['userName']);
 $errors=validarLogin($_POST);
 
 if(empty($errors)){
-  loguear(existeUsuario($userName));
-  if (isset($_POST["recordar"])) {
+var_dump($_POST);
+
+  loguear($usuario = existeUsuario($userName));
+  if (isset($_POST["remember"])) {
 	   setcookie('id', $usuario['id'], time() + 3600 * 24 * 30);
      setcookie('displayName', $usuario['displayName'], time() + 3600 * 24 * 30);
      }
-  header('location: index.php');
-  exit;
+  		header('location: index.php');
+  	exit;
 }
 }
 
