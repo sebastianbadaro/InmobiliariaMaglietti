@@ -29,8 +29,11 @@ if(estaLogueado())
 
           <?php if(!estaLogueado()) : ?>
           <li class="nav-item active">
+
            <a class="nav-link" href="login.php">LOG IN <span class="sr-only"></span></a>
           </li>
+
+
 
         <li class="nav-item active">
          <a class="nav-link" href="registro.php">REGISTER <span class="sr-only"></span></a>
@@ -38,6 +41,7 @@ if(estaLogueado())
 
         <?php else: ?>
           <!-- <a class="nav-link" > OUT <span class="sr-only"></span></a> -->
+              <li>  <a href="#"> <img src="images/user.png" class="tata" alt=""></li></a>
         <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                    <?=$displayName;?>
