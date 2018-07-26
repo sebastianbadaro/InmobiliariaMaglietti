@@ -96,7 +96,7 @@ if($_POST){
       </div>
     </div>
     <div class="form-group">
-				<label for="display_name">Display name</label>
+				<label for="display_name">Username</label>
       <input type="text" name="display_name" value="<?=$displayName?>" id="display_name" class="form-control input-lg" placeholder="Johnny" tabindex="3">
     </div>
     <div class="form-group">
@@ -105,7 +105,7 @@ if($_POST){
     </div>
 
 
-    
+
 
 
     <div class="row">

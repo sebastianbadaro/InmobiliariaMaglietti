@@ -65,10 +65,11 @@ var_dump($_POST);
                 </ul>
               </div>
               <?php endif; ?>
-
-            <input type="text" id="userName" name="userName"class="form-control input-sm chat-input" placeholder="Username" value="<?=$userName?>"/>
+							<label for="userName">Username</label>
+            <input type="text" id="userName" name="userName"class="form-control input-sm chat-input" placeholder="Johnny" value="<?=$userName?>"/>
             </br>
-            <input type="password" id="userPassword" name="password" class="form-control input-sm chat-input" placeholder="Password" />
+						<label for="userPassword">Password</label>
+            <input type="password" id="userPassword" name="password" class="form-control input-sm chat-input" placeholder="********" />
             </br>
            <input type="checkbox" name="remember" value="remember"> Remember me<br>
            <a href="#">Forgot your password?</a>
@@ -77,7 +78,7 @@ var_dump($_POST);
             <span class="group-btn align-items-center">
               <div class="row">
                 <div class="col-xs-12 col-md-6"><input type="submit" value="Sign in" class="btn btn-success btn-block btn-lg" tabindex="7"></div>
-                <div class="col-xs-12 col-md-6"><a href="registro.php" class="btn btn-primary btn-block btn-lg">Register</a></div>
+                <div class="col-xs-12 col-md-6"><a href="registro.php" class="btn-block btn-lg">or Register</a></div>
               </div>
 
             </span>
