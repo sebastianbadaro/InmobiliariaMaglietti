@@ -84,47 +84,41 @@ if($_POST){
 
 
         <div class="form-group">
-                      <input type="text" value="<?=$firstName?>" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1">
+											<label for="first_name">First Name</label>
+                      <input type="text" value="<?=$firstName?>" name="first_name" id="first_name" class="form-control input-lg" placeholder="John" tabindex="1">
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-6">
         <div class="form-group">
-          <input type="text" name="last_name" value="<?=$lastName?>" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
+						<label for="last_name">Last Name</label>
+          <input type="text" name="last_name" value="<?=$lastName?>" id="last_name" class="form-control input-lg" placeholder="Doe" tabindex="2">
         </div>
       </div>
     </div>
     <div class="form-group">
-      <input type="text" name="display_name" value="<?=$displayName?>" id="display_name" class="form-control input-lg" placeholder="Display Name" tabindex="3">
+				<label for="display_name">Display name</label>
+      <input type="text" name="display_name" value="<?=$displayName?>" id="display_name" class="form-control input-lg" placeholder="Johnny" tabindex="3">
     </div>
     <div class="form-group">
-      <input type="email" name="email" id="email" value="<?=$email?>"class="form-control input-lg" placeholder="Email Address" tabindex="4">
+				<label for="email">Email</label>
+      <input type="email" name="email" id="email" value="<?=$email?>"class="form-control input-lg" placeholder="john.doe@email.com" tabindex="4">
     </div>
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-6">
-    <div class="form-group">
-      <label for="file">Select a profile Picture</label>
 
-    </div>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-6">
-  <div class="form-group">
 
-    <input type="file" name="file" id="file" class="form-control-file input-lg" placeholder="Profile Picture" tabindex="5" value="<?= isset($_FILES['foto']['tmp'])?$_FILES['foto']['tmp']:'';?>">
-  </div>
-  </div>
-
-    </div>
+    
 
 
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-6">
         <div class="form-group">
-          <input type="password" name="password" value="<?=$password?>"id="password" class="form-control input-lg" placeholder="Password" tabindex="6">
+						<label for="password">Password</label>
+          <input type="password" name="password" value="<?=$password?>"id="password" class="form-control input-lg" placeholder="********" tabindex="6">
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-6">
         <div class="form-group">
-          <input type="password" name="password_confirmation" value="<?=$confirmPassword?>" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
+					<label for="password_confirmation">Password confirmation</label>
+          <input type="password" name="password_confirmation" value="<?=$confirmPassword?>" id="password_confirmation" class="form-control input-lg" placeholder="********" tabindex="6">
         </div>
       </div>
     </div>
@@ -138,7 +132,7 @@ if($_POST){
     <hr class="colorgraph">
     <div class="row">
       <div class="col-xs-12 col-md-6"><input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
-      <div class="col-xs-12 col-md-6"><a href="login.php" class="btn btn-success btn-block btn-lg">Sign In</a></div>
+      <div class="col-xs-12 col-md-6"><a href="login.php" class="btn-block btn-lg"> or Sign In</a></div>
     </div>
   </form>
 </div>
