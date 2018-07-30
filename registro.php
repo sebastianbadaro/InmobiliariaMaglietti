@@ -2,39 +2,34 @@
 
 <?php
 require_once('functions.php') ;
+require_once('clases/user.php');
+require_once('clases/users.php');
 
 if (estaLogueado()) {
 		header('location: index.php');
 		exit;	}
 
+$usuarios = Users::getAll();
+var_dump($usuarios);
 
-$firstName="";
-$lastName="";
-$email="";
-$displayName="";
-$password="";
-$confirmPassword="";
+$usuario = new User("","","","","","");
+$confirmPassword='';
 $errors=[];
 
 
 if($_POST){
 
-   $firstName=trim($_POST['first_name']);
-   $lastName=trim($_POST['last_name']);
-   $email=trim($_POST['email']);
-   $displayName=trim($_POST['display_name']);
-   $password=trim($_POST['password']);
+	 $usuario = new User('',trim($_POST['first_name']),trim($_POST['last_name']),trim($_POST['email']),trim($_POST['password']),'1');
    $confirmPassword=trim($_POST['password_confirmation']);
-   $errors = validar_form($_POST);
+   $errors = $usuario->validateInformation($confirmPassword);
 
    if (empty($errors)) {
-     $usuario = crearUsuario($_POST);
-     guardarUsuario($usuario);
+      $usuario->save();
      header('location: login.php');
      exit;
    }
 
-
+var_dump($confirmPassword);
 }
 
  ?>
@@ -85,23 +80,23 @@ if($_POST){
 
         <div class="form-group">
 											<label for="first_name">First Name</label>
-                      <input type="text" value="<?=$firstName?>" name="first_name" id="first_name" class="form-control input-lg" placeholder="John" tabindex="1">
+                      <input type="text" value="<?=$usuario->getFirstName();?>" name="first_name" id="first_name" class="form-control input-lg" placeholder="John" tabindex="1">
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-6">
         <div class="form-group">
 						<label for="last_name">Last Name</label>
-          <input type="text" name="last_name" value="<?=$lastName?>" id="last_name" class="form-control input-lg" placeholder="Doe" tabindex="2">
+          <input type="text" name="last_name" value="<?=$usuario->getLastName();?>" id="last_name" class="form-control input-lg" placeholder="Doe" tabindex="2">
         </div>
       </div>
     </div>
-    <div class="form-group">
+    <!-- <div class="form-group">
 				<label for="display_name">Username</label>
-      <input type="text" name="display_name" value="<?=$displayName?>" id="display_name" class="form-control input-lg" placeholder="Johnny" tabindex="3">
-    </div>
+      <input type="text" name="display_name" value="<?=$usuario->getId();?>" id="display_name" class="form-control input-lg" placeholder="Johnny" tabindex="3">
+    </div> -->
     <div class="form-group">
 				<label for="email">Email</label>
-      <input type="email" name="email" id="email" value="<?=$email?>"class="form-control input-lg" placeholder="john.doe@email.com" tabindex="4">
+      <input type="email" name="email" id="email" value="<?=$usuario->getEmail();?>"class="form-control input-lg" placeholder="john.doe@email.com" tabindex="4">
     </div>
 
 
@@ -112,13 +107,13 @@ if($_POST){
       <div class="col-xs-12 col-sm-6 col-md-6">
         <div class="form-group">
 						<label for="password">Password</label>
-          <input type="password" name="password" value="<?=$password?>"id="password" class="form-control input-lg" placeholder="********" tabindex="6">
+          <input type="password" name="password" value="<?=$usuario->getPassword();?>"id="password" class="form-control input-lg" placeholder="********" tabindex="6">
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-6">
         <div class="form-group">
 					<label for="password_confirmation">Password confirmation</label>
-          <input type="password" name="password_confirmation" value="<?=$confirmPassword?>" id="password_confirmation" class="form-control input-lg" placeholder="********" tabindex="6">
+          <input type="password" name="password_confirmation" value="<?=$confirmPassword;?>" id="password_confirmation" class="form-control input-lg" placeholder="********" tabindex="6">
         </div>
       </div>
     </div>

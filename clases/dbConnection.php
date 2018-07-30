@@ -7,7 +7,7 @@ $db = new PDO($dns, $db_user,$db_pass);
 //var_dump($db);
 
 } catch (Exception $e) {
-      //  echo $e->getMessage();
+        echo $e->getMessage();
 }
 
  ?>
