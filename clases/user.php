@@ -3,6 +3,8 @@
 /**
  *
  */
+require_once('users.php');
+
 class User
 {
   private $id;
@@ -22,6 +24,32 @@ class User
     $this->rol = $rol;
   }
 
+  public function validateLogin($providedPassword){
+    $errors=[];
+    if($otherMe=Users::getUserByEmail($this->email))
+    {
+      self::copyOnMe($otherMe);
+      if (!self::isPasswordCorrect($providedPassword)) {
+          $errors[]='incorrect Password.';
+      }
+    }else {
+        $errors[]='Invalid email.';
+    }
+
+    return $errors;
+  }
+  private function isPasswordCorrect($providedPassword){
+
+    return password_verify($providedPassword, $this->password);
+  }
+
+  private function copyOnMe($user){
+    $this->id = $user->getId();
+    $this->firstName = $user->getFirstName();
+    $this->lastName = $user->getLastName();
+    $this->password = $user->getPassword();
+    $this->rol = $user->getRol();
+  }
   public function save(){
     include("dbConnection.php");
 

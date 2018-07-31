@@ -8,6 +8,32 @@ public static $total;
 public static $allUsers;
 
 
+public static function getUserByEmail($email){
+include("dbConnection.php");
+if(self::emailExists($email)){
+
+  $CadenaDeBusqueda = "select * from InmobiliariaMaglietti.users where email = '{$email}'";
+  $ConsultaALaBase = $db->prepare($CadenaDeBusqueda);
+  $ConsultaALaBase->execute();
+
+  $UsersADevolver=[];
+//Recorro cada registro que obtuve
+   $UnRegistro = $ConsultaALaBase->fetch(PDO::FETCH_ASSOC);
+
+     //Instancio un objeto de tipo Usuario
+    $UnUser = new User($UnRegistro['id'], $UnRegistro['firstName'],$UnRegistro['lastName'],$UnRegistro['email'],$UnRegistro['password'],$UnRegistro['rol']);
+
+
+}else {
+$UnUser=false;
+}
+
+
+
+
+return $UnUser;
+}
+
 public static function emailExists($email){
 include("dbConnection.php");
 $sql = "select count(*) from InmobiliariaMaglietti.users where email = '{$email}'";

@@ -10,7 +10,7 @@ if (estaLogueado()) {
 		exit;	}
 
 $usuarios = Users::getAll();
-var_dump($usuarios);
+
 
 $usuario = new User("","","","","","");
 $confirmPassword='';
@@ -107,13 +107,13 @@ var_dump($confirmPassword);
       <div class="col-xs-12 col-sm-6 col-md-6">
         <div class="form-group">
 						<label for="password">Password</label>
-          <input type="password" name="password" value="<?=$usuario->getPassword();?>"id="password" class="form-control input-lg" placeholder="********" tabindex="6">
+          <input type="password" name="password" value="<?=$usuario->getPassword();?>"id="password" class="form-control input-lg" placeholder="" tabindex="6">
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-6">
         <div class="form-group">
 					<label for="password_confirmation">Password confirmation</label>
-          <input type="password" name="password_confirmation" value="<?=$confirmPassword;?>" id="password_confirmation" class="form-control input-lg" placeholder="********" tabindex="6">
+          <input type="password" name="password_confirmation" value="<?=$confirmPassword;?>" id="password_confirmation" class="form-control input-lg" placeholder="" tabindex="6">
         </div>
       </div>
     </div>

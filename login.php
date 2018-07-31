@@ -2,24 +2,26 @@
 
 <?php
 require_once('functions.php') ;
+require_once('clases/user.php') ;
 
 if (estaLogueado()) {
 		header('location: index.php');
 		exit;	}
 
-$userName='';
-$password='';
+$usuario = new User('','','','','','');
 $errors=[];
 
 
 if($_POST){
-$userName=trim($_POST['userName']);
-$errors=validarLogin($_POST);
+//var_dump($_POST);
+	$usuario = new User('','','',trim($_POST['email']),'','');
+
+	$providedPassword=trim($_POST['password']);
+  $errors=$usuario->validateLogin($providedPassword);
 
 if(empty($errors)){
-var_dump($_POST);
 
-  loguear($usuario = existeUsuario($userName));
+   loguear($usuario);
   if (isset($_POST["remember"])) {
 	   setcookie('id', $usuario['id'], time() + 3600 * 24 * 30);
      setcookie('displayName', $usuario['displayName'], time() + 3600 * 24 * 30);
@@ -65,11 +67,11 @@ var_dump($_POST);
                 </ul>
               </div>
               <?php endif; ?>
-							<label for="userName">Username</label>
-            <input type="text" id="userName" name="userName"class="form-control input-sm chat-input" placeholder="Johnny" value="<?=$userName?>"/>
+							<label for="email">Email</label>
+            <input type="email" id="email" name="email"class="form-control input-sm chat-input" placeholder="John.doe@email.com" value="<?=$usuario->getEmail();?>"/>
             </br>
-						<label for="userPassword">Password</label>
-            <input type="password" id="userPassword" name="password" class="form-control input-sm chat-input" placeholder="********" />
+						<label for="password">Password</label>
+            <input type="password" id="password" name="password" class="form-control input-sm chat-input" placeholder="" value=""/>
             </br>
            <input type="checkbox" name="remember" value="remember"> Remember me<br>
            <a href="#">Forgot your password?</a>
