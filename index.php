@@ -1,7 +1,11 @@
 
 <?php
 require_once('functions.php') ;
+require_once('clases/products.php') ;
+require_once('clases/product.php') ;
 
+$products = Products::getAll();
+//var_dump($products);
  ?>
 
 <!DOCTYPE html>
@@ -20,66 +24,69 @@ require_once('functions.php') ;
     <title>HOME</title>
   </head>
   <body>
+    <?php include("nav.php") ?>
+<div class="container container-login">
 
-<?php include("nav.php") ?>
 
-<section class="profile-section">
+
+
+<!-- <section class="profile-section">
 
     <img src="images/e-commerce.png"  class="profile-image" >
-    <h1>COOL E-Commerce</h1>
+    <h1>Inmobiliaria Maglietti</h1>
     <ion-icon name="twitter"></ion-icon>
-    <p class="nice-family">The place to find it...</p>
-</section>
+    <p class="nice-family">The place to find your next home...</p>
+</section> -->
 
 <section class="popular-items">
 
 
-<h3 class="title">Most popular items</h3>
+<h3 class="title">Ultimos inmbuebles</h3>
 
-<div class="row align-items-center  justify-content-around">
+<!-- <div class="row align-items-center  justify-content-around">
 
-        <article class="col-12 col-md-6 col-lg-4 col-xl-3">
-          <img src="images/submarine.png" alt="submarine" class="mytest">
-        </article>
-        <article class="col-12 col-md-6 col-lg-4 col-xl-3">
-            <img src="images/cabin.png" alt="submarine">
-        </article>
-        <article class="col-12 col-md-6 col-lg-4 col-xl-3">
-        <img src="images/cake.png" alt="submarine">
-        </article>
-        <article class="col-12 col-md-6 col-lg-4 col-xl-3">
-        <img src="images/circus.png" alt="submarine">
-        </article>
-        <article class="col-12 col-md-6 col-lg-4 col-xl-3">
-        <img src="images/game.png" alt="submarine">
-        </article>
-        <article class="col-12 col-md-6 col-lg-4 col-xl-3 ">
-          <img src="images/submarine.png" alt="submarine">
-        </article>
-        <article class="col-12 col-md-6 col-lg-4 col-xl-3">
-            <img src="images/cabin.png" alt="submarine">
-        </article>
-        <article class="col-12 col-md-6 col-lg-4 col-xl-3">
-        <img src="images/cake.png" alt="submarine">
-        </article>
-        <article class="col-12 col-md-6 col-lg-4 col-xl-3">
-        <img src="images/circus.png" alt="submarine">
-        </article>
-        <article class="col-12 col-md-6 col-lg-4 col-xl-3">
-        <img src="images/game.png" alt="submarine">
-        </article>
-        <article class="col-12 col-md-6 col-lg-4 col-xl-3">
-          <img src="images/submarine.png" alt="submarine">
-        </article>
-        <article class="col-12 col-md-6 col-lg-4 col-xl-3">
-            <img src="images/cabin.png" alt="submarine">
-        </article>
+
+</div> -->
+
+<div class="row">
+  <?php foreach ($products as $product): ?>
+    <div class="col-lg-3 col-md-4 col-sm-6 padding-top-30">
+         <div class="thumbnail img-thumb-bg">
+             <div class="overlay"></div>
+             <div class="caption">
+                 <div class="tag ">
+                   <a class="<?=$product->getType()?>"href="#"><?=$product->getType()?></a>
+                   <a class="<?=$product->getCategory()?>" href="#"><?=$product->getCategory()?></a>
+                 </div>
+                 <div class="tag <?=$product->getCategory()?>"></div>
+                 <div class="title"><a href="#"><?=$product->getAddress()?></a></div>
+                 <div class="clearfix">
+
+                     <!-- <span class="meta-data pull-right"><a href=""><i class="fa fa-heart-o"></i> 4</a></span>  -->
+                 </div>
+                 <div class="content">
+                   <span class="meta-data"><?=$product->getCurrency()?></span>
+                   <span class="meta-data"><?=$product->getValue()?></span>
+                   </div>
+                 <div class="content">
+
+                    <span class="meta-data">Ambientes: <?=$product->getNumberOfRooms()?></span>
+                    <span class="meta-data">Baños: <?=$product->getNumberOfBathrooms()?></span>
+                    <span class="meta-data">Cocheras: <?=$product->getNumberOfparkingSpaces()?></span>
+                 </div>
+             </div>
+         </div>
+      </div>
+  <?php endforeach; ?>
+
+
 </div>
+
 
 <!-- comentario de Marina  Hola Machirulos-->
 
 </section>
-
+</div>
 <?php include("footer.php") ?>
 
   </body>

@@ -22,6 +22,9 @@ require_once('functions.php');
   <body>
 <?php include("nav.php") ?>
 
+<div class="container container-login">
+
+
 
 <section class="about-section">
     <h1 class="faq-title"></h1>
@@ -74,7 +77,7 @@ require_once('functions.php');
 </section>
 
 
-
+</div>
 
 
 

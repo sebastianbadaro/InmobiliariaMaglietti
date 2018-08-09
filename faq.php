@@ -30,6 +30,9 @@ $allFaqs = Faqs::getAll();
 
   <?php include("nav.php") ?>
 
+<div class="container container-login">
+
+
 <section class="faq-section">
   <h1 class="faq-title">F.A.Q</h1>
 
@@ -58,7 +61,7 @@ $allFaqs = Faqs::getAll();
 
 <?php endforeach; ?>
 </section>
-
+</div>
 <?php include("footer.php") ?>
 
   </body>

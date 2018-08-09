@@ -7,7 +7,7 @@ if(estaLogueado())
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark my-navbar">
 
-<a href="index.php">  <img src="images/e-commerce.png" alt="COOL E-Commerce" class="icon-ecommerce" href="index.php"></a>
+<a href="index.php">  <img src="images/logo.png" alt="COOL E-Commerce" class="icon-ecommerce" href="index.php"></a>
 
       <a class="navbar-brand titulo" href="index.php">Inmobiliaria Maglietti</a>
     <button class="navbar-toggler my-toggle-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

@@ -9,40 +9,32 @@ public static $allUsers;
 
 
 public static function getUserByEmail($email){
-include("dbConnection.php");
-if(self::emailExists($email)){
+  include("dbConnection.php");
+  if(self::emailExists($email)){
 
-  $CadenaDeBusqueda = "select * from InmobiliariaMaglietti.users where email = '{$email}'";
-  $ConsultaALaBase = $db->prepare($CadenaDeBusqueda);
-  $ConsultaALaBase->execute();
-
-  $UsersADevolver=[];
-//Recorro cada registro que obtuve
-   $UnRegistro = $ConsultaALaBase->fetch(PDO::FETCH_ASSOC);
-
-     //Instancio un objeto de tipo Usuario
+    $CadenaDeBusqueda = "select * from InmobiliariaMaglietti.users where email = '{$email}'";
+    $ConsultaALaBase = $db->prepare($CadenaDeBusqueda);
+    $ConsultaALaBase->execute();
+    $UsersADevolver=[];
+    $UnRegistro = $ConsultaALaBase->fetch(PDO::FETCH_ASSOC);
     $UnUser = new User($UnRegistro['id'], $UnRegistro['firstName'],$UnRegistro['lastName'],$UnRegistro['email'],$UnRegistro['password'],$UnRegistro['rol']);
 
 
-}else {
-$UnUser=false;
-}
-
-
-
-
-return $UnUser;
+  }else {
+    $UnUser=false;
+  }
+  return $UnUser;
 }
 
 public static function emailExists($email){
-include("dbConnection.php");
-$sql = "select count(*) from InmobiliariaMaglietti.users where email = '{$email}'";
-$result = $db->query($sql);
-$existe = 0;
-foreach ($result as $row) {
-$existe = $row[0];
-}
-return $existe;
+  include("dbConnection.php");
+  $sql = "select count(*) from InmobiliariaMaglietti.users where email = '{$email}'";
+  $result = $db->query($sql);
+  $existe = 0;
+  foreach ($result as $row) {
+    $existe = $row[0];
+  }
+  return $existe;
 }
 
 public static function getAll(){
