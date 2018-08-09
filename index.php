@@ -43,6 +43,7 @@ $products = Products::getAll();
   <?php foreach ($products as $product): ?>
     <div class="col-lg-3 col-md-4 col-sm-6 padding-top-30">
          <div class="thumbnail img-thumb-bg">
+           <!-- style ="background-image: url(images/cabin.png)"  -->
              <div class="overlay"></div>
              <div class="caption">
                  <div class="tag ">
