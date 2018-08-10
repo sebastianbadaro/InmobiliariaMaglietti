@@ -10,13 +10,22 @@ class Products
   public static $total;
   public static $allProducts;
 
-  public static function getAll()
+  public static function getAllProducts(){
+    return self::getAll("SELECT * FROM product_view");
+  }
+
+  public static function getAllProductsByType($typeId){
+    return self::getAll("SELECT * FROM product_view where typeId = '{$typeId}'");
+  }
+
+
+  private static function getAll($CadenaDeBusqueda)
   {
     if(!isset(self::$allProducts)){
 
     include("dbConnection.php");//     Kevin: No lo pude hacer andar en otro lado
 
-          $CadenaDeBusqueda = "SELECT * FROM product_view";
+          // $CadenaDeBusqueda = "SELECT * FROM product_view";
           $ConsultaALaBase = $db->prepare($CadenaDeBusqueda);
           $ConsultaALaBase->execute();
 

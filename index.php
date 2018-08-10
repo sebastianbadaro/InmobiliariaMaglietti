@@ -5,8 +5,14 @@ require_once('clases/products.php') ;
 require_once('clases/product.php') ;
 require_once('clases/productImage.php') ;
 require_once('clases/productImages.php') ;
+$products=[];
 
-$products = Products::getAll();
+if(!$_GET){
+$products = Products::getAllProducts();
+}elseif (isset($_GET['typeId'])) {
+  $products = Products::getAllProductsByType($_GET['typeId']);
+}
+
 // $images = ProductImages::getImagesByProductId(1);
 
  // var_dump($products[0]->getImages());

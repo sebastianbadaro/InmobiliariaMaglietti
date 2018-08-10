@@ -18,25 +18,43 @@ if(estaLogueado())
     <div class="collapse navbar-collapse " id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="index.php">HOME <span class="sr-only"></span></a>
+          <a class="nav-link" href="index.php">Inicio <span class="sr-only"></span></a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="about.php">ABOUT<span class="sr-only"></span></a>
+          <form class="" action="index.php" method="get">
+                            <input hidden type="text" name="typeId" value="1">
+                            <button type="submit" class="" name="">
+                              Venta
+                            </button>
+                          </form>
+          <!-- <a class="nav-link" href="index.php">Ventas <span class="sr-only"></span></a> -->
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="faq.php">FAQ <span class="sr-only"></span></a>
+          <form class="" action="index.php" method="get">
+                            <input hidden type="text" name="typeId" value="2">
+                            <button type="submit" class="" name="">
+                              Alquileres
+                            </button>
+                          </form>
+          <!-- <a class="nav-link" href="index.php">Ventas <span class="sr-only"></span></a> -->
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="about.php">Nosotros<span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="faq.php">FAQ<span class="sr-only"></span></a>
         </li>
 
           <?php if(!estaLogueado()) : ?>
           <li class="nav-item active">
 
-           <a class="nav-link" href="login.php">LOG IN <span class="sr-only"></span></a>
+           <a class="nav-link" href="login.php">Ingresar <span class="sr-only"></span></a>
           </li>
 
 
 
         <li class="nav-item active">
-         <a class="nav-link" href="registro.php">REGISTER <span class="sr-only"></span></a>
+         <a class="nav-link" href="registro.php">Crear cuenta <span class="sr-only"></span></a>
         </li>
 
         <?php else: ?>
