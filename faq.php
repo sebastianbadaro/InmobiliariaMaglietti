@@ -25,7 +25,7 @@ $allFaqs = Faqs::getAll();
 
 
 <section class="faq-section">
-  <h1 class="faq-title">F.A.Q</h1>
+  <h1 class="main-title">F.A.Q</h1>
 
 
 <?php foreach ($allFaqs as $faq): ?>

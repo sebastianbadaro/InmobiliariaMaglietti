@@ -3,9 +3,13 @@
 require_once('functions.php') ;
 require_once('clases/products.php') ;
 require_once('clases/product.php') ;
+require_once('clases/productImage.php') ;
+require_once('clases/productImages.php') ;
 
 $products = Products::getAll();
-//var_dump($products);
+// $images = ProductImages::getImagesByProductId(1);
+
+ // var_dump($products[0]->getImages());
  ?>
 
 <!DOCTYPE html>
@@ -32,7 +36,7 @@ $products = Products::getAll();
 <section class="popular-items">
 
 
-<h3 class="title">Ultimos inmbuebles</h3>
+<h3 class="main-title">Ultimos inmbuebles</h3>
 
 <!-- <div class="row align-items-center  justify-content-around">
 
@@ -42,7 +46,7 @@ $products = Products::getAll();
 <div class="row">
   <?php foreach ($products as $product): ?>
     <div class="col-lg-3 col-md-4 col-sm-6 padding-top-30">
-         <div class="thumbnail img-thumb-bg">
+         <div class="thumbnail img-thumb-bg"  style ="background-image: url(images/productImages/<?=$product->getImages()[0]->getName()?>)">
            <!-- style ="background-image: url(images/cabin.png)"  -->
              <div class="overlay"></div>
              <div class="caption">

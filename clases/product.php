@@ -18,8 +18,9 @@ class Product
   private $value;
   private $description;
   private $category;
+  private $images;
 
-  function __construct($id,$title,$type,$numberOfRooms,$numberOfBathrooms,$numberOfparkingSpaces,$totalSurface,$coveredSurfaces,$address,$city,$currency,$value,$description,$category)
+  function __construct($id,$title,$type,$numberOfRooms,$numberOfBathrooms,$numberOfparkingSpaces,$totalSurface,$coveredSurfaces,$address,$city,$currency,$value,$description,$category,$images)
   {
     $this->id=$id;
     $this->title=$title;
@@ -35,6 +36,7 @@ class Product
     $this->value=$value;
     $this->description=$description;
     $this->category=$category;
+    $this->images=$images;
   }
 
     /**
@@ -176,6 +178,17 @@ class Product
     public function getCategory()
     {
         return $this->category;
+    }
+
+
+    /**
+     * Get the value of Images
+     *
+     * @return mixed
+     */
+    public function getImages()
+    {
+        return $this->images;
     }
 
 }

@@ -1,6 +1,8 @@
 <?php
 
 require_once("product.php");
+require_once("productImages.php");
+require_once("productImage.php");
 
 
 class Products
@@ -21,11 +23,11 @@ class Products
           $ProductosADevolver=[];
     //Recorro cada registro que obtuve
            while ($UnRegistro = $ConsultaALaBase->fetch(PDO::FETCH_ASSOC)) {
-
+              $productImages = ProductImages::getImagesByProductId($UnRegistro['id']);
              //Instancio un objeto de tipo Usuario
             $UnProduct = new Product($UnRegistro['id'],$UnRegistro['title'],$UnRegistro['type'],
             $UnRegistro['numberOfRooms'],$UnRegistro['numberOfBathrooms'],$UnRegistro['numberOfParkingSpaces'],$UnRegistro['totalSurface'],$UnRegistro['coveredSurface'],
-            $UnRegistro['address'],$UnRegistro['city'],$UnRegistro['currency'],$UnRegistro['value'],$UnRegistro['description'],$UnRegistro['category']);
+            $UnRegistro['address'],$UnRegistro['city'],$UnRegistro['currency'],$UnRegistro['value'],$UnRegistro['description'],$UnRegistro['category'],$productImages);
 
             //Agrego el objeto Usuaio al array
               $ProductosADevolver[] = $UnProduct;
