@@ -6,11 +6,12 @@ require_once('clases/product.php') ;
 require_once('clases/productImage.php') ;
 require_once('clases/productImages.php') ;
 $products=[];
-
+$title = "Ultimos inmbuebles";
 if(!$_GET){
 $products = Products::getAllProducts();
 }elseif (isset($_GET['typeId'])) {
   $products = Products::getAllProductsByType($_GET['typeId']);
+  
 }
 
 // $images = ProductImages::getImagesByProductId(1);

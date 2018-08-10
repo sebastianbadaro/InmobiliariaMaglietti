@@ -22,16 +22,16 @@ if(estaLogueado())
         </li>
         <li class="nav-item active">
           <form class="" action="index.php" method="get">
-                            <input hidden type="text" name="typeId" value="1">
+                            <input hidden type="text" name="typeId" value="2">
                             <button type="submit" class="" name="">
-                              Venta
+                              Ventas
                             </button>
                           </form>
           <!-- <a class="nav-link" href="index.php">Ventas <span class="sr-only"></span></a> -->
         </li>
         <li class="nav-item active">
           <form class="" action="index.php" method="get">
-                            <input hidden type="text" name="typeId" value="2">
+                            <input hidden type="text" name="typeId" value="1">
                             <button type="submit" class="" name="">
                               Alquileres
                             </button>
