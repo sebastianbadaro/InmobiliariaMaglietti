@@ -19,6 +19,39 @@ class Products
   }
 
 
+
+
+  public static function getProductById($productId){
+    include("dbConnection.php");
+    if(self::productExists($productId)){
+
+      $CadenaDeBusqueda = "select * from product_view where id = '{$productId}'";
+      $ConsultaALaBase = $db->prepare($CadenaDeBusqueda);
+      $ConsultaALaBase->execute();
+      $UnRegistro = $ConsultaALaBase->fetch(PDO::FETCH_ASSOC);
+      $productImages = ProductImages::getImagesByProductId($UnRegistro['id']);
+      $aProduct = new Product($UnRegistro['id'],$UnRegistro['title'],$UnRegistro['type'],
+                                $UnRegistro['numberOfRooms'],$UnRegistro['numberOfBathrooms'],$UnRegistro['numberOfParkingSpaces'],$UnRegistro['totalSurface'],$UnRegistro['coveredSurface'],
+                               $UnRegistro['address'],$UnRegistro['city'],$UnRegistro['currency'],$UnRegistro['value'],$UnRegistro['description'],$UnRegistro['category'],$productImages);
+
+
+    }else {
+      $aProduct=false;
+    }
+    return $aProduct;
+  }
+
+  public static function productExists($productId){
+    include("dbConnection.php");
+    $sql = "select count(*) from product_view where id = '{$productId}'";
+    $result = $db->query($sql);
+    $existe = 0;
+    foreach ($result as $row) {
+      $existe = $row[0];
+    }
+    return $existe;
+  }
+
   private static function getAll($CadenaDeBusqueda)
   {
     if(!isset(self::$allProducts)){
@@ -32,11 +65,11 @@ class Products
           $ProductosADevolver=[];
     //Recorro cada registro que obtuve
            while ($UnRegistro = $ConsultaALaBase->fetch(PDO::FETCH_ASSOC)) {
-              $productImages = ProductImages::getImagesByProductId($UnRegistro['id']);
+            $productImages = ProductImages::getImagesByProductId($UnRegistro['id']);
              //Instancio un objeto de tipo Usuario
             $UnProduct = new Product($UnRegistro['id'],$UnRegistro['title'],$UnRegistro['type'],
-            $UnRegistro['numberOfRooms'],$UnRegistro['numberOfBathrooms'],$UnRegistro['numberOfParkingSpaces'],$UnRegistro['totalSurface'],$UnRegistro['coveredSurface'],
-            $UnRegistro['address'],$UnRegistro['city'],$UnRegistro['currency'],$UnRegistro['value'],$UnRegistro['description'],$UnRegistro['category'],$productImages);
+                                      $UnRegistro['numberOfRooms'],$UnRegistro['numberOfBathrooms'],$UnRegistro['numberOfParkingSpaces'],$UnRegistro['totalSurface'],$UnRegistro['coveredSurface'],
+                                     $UnRegistro['address'],$UnRegistro['city'],$UnRegistro['currency'],$UnRegistro['value'],$UnRegistro['description'],$UnRegistro['category'],$productImages);
 
             //Agrego el objeto Usuaio al array
               $ProductosADevolver[] = $UnProduct;

@@ -9,11 +9,13 @@ class ProductImage
   private $name;
   private $description;
   private $dateCreated;
-  function __construct($idProduct,$idImage,$name,$description,$dateCreated)
+  private $title;
+  function __construct($idProduct,$idImage,$name,$description,$dateCreated,$title)
   {
     $this->idProduct=$idProduct;
     $this->idImage=$idImage;
     $this->name=$name;
+    $this->title=$title;
     $this->description=$description;
     $this->dateCreated=$dateCreated;
   }
@@ -66,6 +68,19 @@ class ProductImage
     public function getDateCreated()
     {
         return $this->dateCreated;
+    }
+
+
+
+
+    /**
+     * Get the value of Title
+     *
+     * @return mixed
+     */
+    public function getTitle()
+    {
+        return $this->title;
     }
 
 }

@@ -17,7 +17,7 @@ class ProductImages
       while ($UnRegistro = $ConsultaALaBase->fetch(PDO::FETCH_ASSOC)) {
 
         //Instancio un objeto de tipo Imagen
-       $productImage = new productImage($UnRegistro['idImage'], $UnRegistro['idProduct'],$UnRegistro['name'],$UnRegistro['description'],$UnRegistro['dateCreated']);
+       $productImage = new productImage($UnRegistro['idImage'], $UnRegistro['idProduct'],$UnRegistro['name'],$UnRegistro['description'],$UnRegistro['dateCreated'],$UnRegistro['title']);
 
        //Agrego el objeto imagen al array
        $images[] = $productImage;

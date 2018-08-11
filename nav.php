@@ -7,6 +7,9 @@ if(estaLogueado())
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark my-navbar">
 
+<div class="container">
+
+
 <a href="index.php">  <img src="images/logo.png" alt="COOL E-Commerce" class="icon-ecommerce" href="index.php"></a>
 
       <a class="navbar-brand titulo" href="index.php">Inmobiliaria Maglietti</a>
@@ -21,23 +24,13 @@ if(estaLogueado())
           <a class="nav-link" href="index.php">Inicio <span class="sr-only"></span></a>
         </li>
         <li class="nav-item active">
-          <form class="" action="index.php" method="get">
-                            <input hidden type="text" name="typeId" value="2">
-                            <button type="submit" class="" name="">
-                              Ventas
-                            </button>
-                          </form>
-          <!-- <a class="nav-link" href="index.php">Ventas <span class="sr-only"></span></a> -->
+          <a class="nav-link" href="index.php?typeId=2">Ventas <span class="sr-only"></span></a>
         </li>
         <li class="nav-item active">
-          <form class="" action="index.php" method="get">
-                            <input hidden type="text" name="typeId" value="1">
-                            <button type="submit" class="" name="">
-                              Alquileres
-                            </button>
-                          </form>
-          <!-- <a class="nav-link" href="index.php">Ventas <span class="sr-only"></span></a> -->
+          <a class="nav-link" href="index.php?typeId=1">Alquileres <span class="sr-only"></span></a>
         </li>
+
+
         <li class="nav-item active">
           <a class="nav-link" href="about.php">Nosotros<span class="sr-only"></span></a>
         </li>
@@ -76,5 +69,6 @@ if(estaLogueado())
 
       </ul>
 
+    </div>
     </div>
   </nav>

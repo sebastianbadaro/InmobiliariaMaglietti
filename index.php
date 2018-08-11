@@ -11,7 +11,7 @@ if(!$_GET){
 $products = Products::getAllProducts();
 }elseif (isset($_GET['typeId'])) {
   $products = Products::getAllProductsByType($_GET['typeId']);
-  
+
 }
 
 // $images = ProductImages::getImagesByProductId(1);
@@ -27,7 +27,7 @@ $products = Products::getAllProducts();
   </head>
   <body>
     <?php include("nav.php") ?>
-<div class="container container-login">
+<div class="container">
 
 
 
@@ -40,7 +40,9 @@ $products = Products::getAllProducts();
     <p class="nice-family">The place to find your next home...</p>
 </section> -->
 
-<section class="popular-items">
+<section class="popular-items ">
+
+<div class="login-div">
 
 
 <h3 class="main-title">Ultimos inmbuebles</h3>
@@ -50,10 +52,10 @@ $products = Products::getAllProducts();
 
 </div> -->
 
-<div class="row">
+<div class="row ">
   <?php foreach ($products as $product): ?>
     <div class="col-lg-3 col-md-4 col-sm-6 padding-top-30">
-         <div class="thumbnail img-thumb-bg"  style ="background-image: url(images/productImages/<?=$product->getImages()[0]->getName()?>)">
+         <div href="#" class="thumbnail img-thumb-bg"  style ="background-image: url(images/productImages/<?=$product->getImages()[0]->getName()?>)">
            <!-- style ="background-image: url(images/cabin.png)"  -->
              <div class="overlay"></div>
              <div class="caption">
@@ -62,7 +64,7 @@ $products = Products::getAllProducts();
                    <a class="<?=$product->getCategory()?>" href="#"><?=$product->getCategory()?></a>
                  </div>
                  <div class="tag <?=$product->getCategory()?>"></div>
-                 <div class="title"><a href="#"><?=$product->getAddress()?></a></div>
+                 <div class="title"><a href="productDetail.php?productId=<?=$product->getId()?>"><?=$product->getAddress()?></a></div>
                  <div class="clearfix">
 
                      <!-- <span class="meta-data pull-right"><a href=""><i class="fa fa-heart-o"></i> 4</a></span>  -->
@@ -87,7 +89,7 @@ $products = Products::getAllProducts();
 
 
 <!-- comentario de Marina  Hola Machirulos-->
-
+</div>
 </section>
 </div>
 <?php include("footer.php") ?>
